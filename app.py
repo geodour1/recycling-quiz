@@ -4,12 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # return "A simple educational and fun application for creating ecological awareness."  # return a string
     return render_template('index.html')
 
-# @app.route('/welcome')
-# def welcome():
-#     return render_template('welcome.html')  # render a template
 
 if __name__ == '__main__':
     app.run(debug=True)
