@@ -3,6 +3,13 @@ from database.setup import create_database, create_titles
 
 from logger import Logger
 
+# Initialize database
+db = create_database()
+titles = create_titles()
+
+# Initialize Logger
+logger = Logger()
+
 # Create application
 app = Flask(__name__)
 
@@ -51,12 +58,4 @@ def health_route():
 
 
 if __name__ == '__main__':
-    # Initialize database
-    db = create_database()
-    titles = create_titles()
-
-    # Initialize Logger
-    logger = Logger()
-
-    # Run application
     app.run(debug=True)
