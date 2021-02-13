@@ -1,6 +1,25 @@
 from entities.question import Question
 from entities.answer import Answer
 
+def create_titles():
+    titles = {
+        "Infant. You must be a newborn so recycling is new to you.":
+            {"min": 0,  "max": 25},
+
+        "Hey Kiddo! You got the basics but there is still much to learn!":
+            {"min": 26, "max": 50},
+
+        "You are Casual. You may have recycled some times but you are not sure if a beer can be recycled... am I right?":
+            {"min": 51, "max": 75},
+
+        "Wow you are a Pro, your knowledge is above average, keep up the good work!":
+            {"min": 76, "max": 85},
+
+        "Forgive me Master for I, have offended you with this quiz!":
+            {"min": 86, "max": 100}
+    }
+    return titles
+
 def create_database():
     """ This method creates the pool of questions"""
     question_pool = []
