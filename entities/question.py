@@ -2,6 +2,7 @@ class Question():
     def __init__(self, text="", fact="", answers=[]):
         self.text = text
         self.fact = fact
+        self.index = 0
         self.answers = answers
     
     def to_json(self):
@@ -12,6 +13,7 @@ class Question():
         json_format = {
             "text": self.text,
             "fact": self.fact,
+            "index": self.index,
             "answers": answers_arr
         }
         return json_format

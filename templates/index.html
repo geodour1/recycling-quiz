@@ -32,7 +32,7 @@ https://templatemo.com/tm-538-digital-trend
      <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../">
               <i class="fa fa-recycle"></i>
               Recycling Quiz
             </a>
@@ -72,7 +72,7 @@ https://templatemo.com/tm-538-digital-trend
 
                                    <h1 class="text-white" data-aos="fade-up">A simple educational and fun application to raise ecological awareness :)</h1>
 
-                                   <!-- <a href="contact.html" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Let us discuss together!</a> -->
+                                   <a href="/quiz" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Start Quiz</a>
 
                                    <strong class="d-block py-3 pl-5 text-white" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-hourglass mr-2"></i> Coming Soon...</strong>
                               </div>
@@ -306,6 +306,13 @@ https://templatemo.com/tm-538-digital-trend
 
 
      <!-- SCRIPTS -->
+     <script>
+     function callQuizPage() {
+          fetch("http://127.0.0.1:5000/quiz").then(res => {
+            return res
+          })
+        }
+     </script>
      <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
      <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
      <script src="{{url_for('static', filename='js/aos.js')}}"></script>
