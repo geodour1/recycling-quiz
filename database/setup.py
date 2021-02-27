@@ -73,7 +73,8 @@ def create_database():
             answers=[
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0)
-            ]
+            ],
+            correct=1
         )
     )
 
