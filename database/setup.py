@@ -33,7 +33,8 @@ def create_database():
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0),
                 Answer(text="Μόνο τα μαύρα", points=0)
-            ]
+            ],
+            correct=1
         )
     )
 
@@ -45,7 +46,8 @@ def create_database():
             answers=[
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0)
-            ]
+            ],
+            correct=0
         )
     )
 
@@ -58,7 +60,8 @@ def create_database():
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0),
                 Answer(text="Αναλόγως το μέγεθος τους", points=0)
-            ]
+            ],
+            correct=1
         )
     )
 
@@ -81,9 +84,9 @@ def create_database():
             fact="Καλύτερη λύση είναι η αγορά φρέσκου ψωμιού ή ακόμη καλύτερα φτιάξε το δικό σου στο σπίτι!",
             answers=[
                 Answer(text="Nαι", points=0),
-                Answer(text="Όχι", points=0),
-                Answer(text="Αναλόγως το υλικό τους", points=0)
-            ]
+                Answer(text="Όχι", points=0)
+            ],
+            correct=1
         )
     )
 
@@ -96,7 +99,8 @@ def create_database():
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0),
                 Answer(text="Αναλόγως το υλικό τους", points=0)
-            ]
+            ],
+            correct=2
         )
     )
 
@@ -107,9 +111,9 @@ def create_database():
             fact="",
             answers=[
                 Answer(text="Nαι", points=0),
-                Answer(text="Όχι", points=0),
-                Answer(text="Μόνο ειδικά απορροφητικά σφουγγάρια", points=0)
-            ]
+                Answer(text="Όχι", points=0)
+            ],
+            correct=1
         )
     )
 
@@ -121,7 +125,8 @@ def create_database():
             answers=[
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0)
-            ]
+            ],
+            correct=1
         )
     )
 
@@ -133,7 +138,8 @@ def create_database():
             answers=[
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0)
-            ]
+            ],
+            correct=0
         )
     )
 
@@ -145,7 +151,8 @@ def create_database():
             answers=[
                 Answer(text="Nαι", points=0),
                 Answer(text="Όχι", points=0)
-            ]
+            ],
+            correct=1
         )
     )
     return question_pool
