@@ -29,4 +29,4 @@ class Helper():
         all_questions = []
         for question in questions:
             all_questions.append(question.to_json())
-        return all_questions
+        return {"questions": all_questions}

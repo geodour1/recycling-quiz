@@ -1,157 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Recycling Quiz</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/jquery.quiz-min.css')}}" />
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/aos.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}">
 
-     <title>Quiz Time!</title>
-<!--
-
-DIGITAL TREND
-
-https://templatemo.com/tm-538-digital-trend
-
--->
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-     <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
-     <link rel="stylesheet" href="{{url_for('static', filename='css/aos.css')}}">
-     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
-     <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}">
-
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="{{url_for('static', filename='css/templatemo-digital-trend.css')}}">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/templatemo-digital-trend.css')}}">
+  
 
 </head>
+
 <body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="../">
+          <i class="fa fa-recycle"></i>
+          Recycling Quiz
+        </a>
+    </div>
+</nav>
 
-     <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg position-absolute">
-        <div class="container">
-          <a class="navbar-brand" href="../">
-              <i class="fa fa-recycle"></i>
-              Recycling Quiz
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- {% for q in questions %}
-              <p>{{q['text']}}</p>
-            {% endfor %} -->
-            <!-- <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="index.html#about" class="nav-link">Studio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#project" class="nav-link">Our Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link active contact">Contact</a>
-                    </li>
-                </ul>
-            </div> -->
-        </div>
-    </nav>
-
-
-     <!-- CONTACT -->
-     <section class="contact section-padding">
-          {% for q in questions %}
-          <div class="container" id="{{q['index']}}">
-               <div class="row">
-                    <div class="col-lg-6 mx-auto col-md-7 col-24 py-5 mt-5 text-left" data-aos="fade-up">
-                      <h1 class="mb-4">{{ q['text'] }}</h1>
-                    </div>
-
-                    {% for a in q['answers'] %}
-                    <div class="col-lg-8 mx-auto col-md-10 col-24">
-                    <a href="#{{q['index']+1}}" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="50">{{a['text']}}</a>
-                    </div>
-                    {% endfor %}
-               </div>
-          </div>
-          {% endfor %}
-     </section>
-
-
-    <!-- <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
-            <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">We make creative <strong>brands</strong> only.</h1>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
-            <h4 class="my-4">Contact Info</h4>
-
-            <p class="mb-1">
-              <i class="fa fa-phone mr-2 footer-icon"></i> 
-              +99 080 070 4224
-            </p>
-
-            <p>
-              <a href="#">
-                <i class="fa fa-envelope mr-2 footer-icon"></i>
-                hello@company.com
-              </a>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
-            <h4 class="my-4">Our Studio</h4>
-
-            <p class="mb-1">
-              <i class="fa fa-home mr-2 footer-icon"></i> 
-              Av. Lúcio Costa - Barra da Tijuca, Rio de Janeiro - RJ, Brazil
-            </p>
-          </div>
-
-          <div class="col-lg-4 mx-lg-auto text-center col-md-8 col-12" data-aos="fade-up" data-aos-delay="400">
-            <p class="copyright-text">Copyright &copy; 2020 Your Company
-            <br>
-            <a rel="nofollow noopener" href="https://templatemo.com">Design: TemplateMo</a></p>
-          </div>
-
-          <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
-            
-            <ul class="footer-link">
-              <li><a href="#">Stories</a></li>
-              <li><a href="#">Work with us</a></li>
-              <li><a href="#">Privacy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
-            <ul class="social-icon">
-              <li><a href="#" class="fa fa-instagram"></a></li>
-              <li><a href="#" class="fa fa-twitter"></a></li>
-              <li><a href="#" class="fa fa-dribbble"></a></li>
-              <li><a href="#" class="fa fa-behance"></a></li>
-            </ul>
-          </div>
-
-        </div>
+  <div class="container">
+    <div id="quiz">
+      <div id="quiz-header">
+        <h3>Πάρτε τον χρόνο σας και προσπαθείστε να απαντήσετε όσο το δυνατόν περισσότερες ερωτήσεις!</h3>
       </div>
-    </footer> -->
+      <div id="quiz-start-screen">
+        <p><a href="#" id="quiz-start-btn" class="quiz-button">Πάμε</a></p>
+      </div>
+    </div>
+  </div>
 
-
-     <!-- SCRIPTS -->
-     <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-     <script src="{{url_for('static', filename='js/aos.js')}}"></script>
-     <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
-     <script src="{{url_for('static', filename='js/custom.js')}}"></script>
-
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <script src="{{url_for('static', filename='js/jquery.quiz-min.js')}}"></script>
+  <script>
+    $('#quiz').quiz({
+      counterFormat: 'Ερώτηση %current από %total',
+      questions: {{ json_data['questions'] | safe }}
+    });
+  </script>
 </body>
+
 </html>

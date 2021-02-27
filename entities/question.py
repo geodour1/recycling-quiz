@@ -1,20 +1,21 @@
 class Question():
-    def __init__(self, text="", fact="", answers=[]):
+    def __init__(self, text="", fact="", answers=[], correct=0):
         self.text = text
         self.fact = fact
-        self.index = 0
         self.answers = answers
-    
+        self.correct = correct
+
     def to_json(self):
         answers_arr = []
         for answer in self.answers:
             answers_arr.append(answer.to_json())
 
         json_format = {
-            "text": self.text,
-            "fact": self.fact,
-            "index": self.index,
-            "answers": answers_arr
+            "q": self.text,
+            "correctIndex": self.correct,
+            "correctResponse": self.fact,
+            "incorrectResponse": self.fact,
+            "options": answers_arr
         }
         return json_format
 

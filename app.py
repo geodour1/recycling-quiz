@@ -4,6 +4,8 @@ from database.setup import create_database, create_titles
 from logger import Logger
 from helper import Helper
 
+import json
+
 # Initialize database
 db = create_database()
 titles = create_titles()
@@ -35,7 +37,7 @@ def start_quiz():
     json_questions = helper.jsonify_questions(random_questions)
 
     # Pass them to template and render it
-    return render_template('quiz.html', questions=json_questions)
+    return render_template('quiz.html', json_data=json_questions)
 
 
 ### GET RESULTS 
@@ -52,13 +54,19 @@ def health_route():
 
 
 ### DEBUG ROUTE
-# @app.route('/test')
-# def test():
-#     all_questions = []
-#     for question in db:
-#         all_questions.append(question.to_json())
+@app.route('/samples')
+def sample():
+    # Get 5 random questions and jsonify them
+    random_questions = helper.get_random_questions(db, 5)
+    json_questions = helper.jsonify_questions(random_questions)
+    return json_questions
 
-#     return {"questions": all_questions}
+@app.route('/test')
+def test():
+    # Get 5 random questions and jsonify them
+    random_questions = helper.get_random_questions(db, 5)
+    json_questions = helper.jsonify_questions(random_questions)
+    return render_template('dyna.html', json_data=json_questions)
 
 
 if __name__ == '__main__':
