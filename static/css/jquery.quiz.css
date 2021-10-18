@@ -53,9 +53,10 @@
     border-radius: 10px;
 }
 
-#quiz-response {}
-#quiz-results {
+#quiz-response {
     color: #fff;
+}
+#quiz-results {
     font-size: 1.25em;
 }
 
