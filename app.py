@@ -25,7 +25,7 @@ def home():
     return render_template('index.html')
 
 
-### START QUIZ
+### START QUIZ 
 @app.route('/quiz')
 def start_quiz():
     # Get 5 random questions
